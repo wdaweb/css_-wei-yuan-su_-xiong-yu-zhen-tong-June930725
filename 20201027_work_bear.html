@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: '微軟正黑體';
+            box-sizing: border-box;
+        }
+
+        .bear {
+            width: 600px;
+            height: 600px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .bear::before {
+            content: '';
+            width: 180px;
+            height: 180px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 200px;
+            left: -20px;
+        }
+
+        .bear::after {
+            content: '';
+            width: 180px;
+            height: 180px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 200px;
+            right: -20px;
+        }
+
+        .mouth {
+            width: 250px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .mouth::before {
+            content: '';
+            width: 70px;
+            height: 40px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .mouth::after {
+            content: '';
+            width: 150px;
+            height: 60px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .ear-l {
+            width: 150px;
+            height: 150px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: 10px;
+        }
+
+        .ear-l::before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+
+        .ear-r {
+            width: 150px;
+            height: 150px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            right: 10px;
+        }
+
+        .ear-r::before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+
+        .eye-l {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 110px;
+            left: 115px;
+        }
+
+        .eye-l::before {
+            content: '';
+            width: 90px;
+            height: 90px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            animation: roll 1s infinite alternate-reverse ease-in-out ;
+        }
+
+        .eye-r {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 110px;
+            right: 115px;
+        }
+
+        .eye-r::before {
+            content: '';
+            width: 90px;
+            height: 90px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            animation: roll 1s infinite alternate-reverse ease-in-out ;
+        }
+
+        .v-l {
+            width: 60px;
+            height: 100px;
+            background: white;
+            transform: skew(35deg);
+            position: absolute;
+            top: 450px;
+            left: 235px;
+        }
+
+        .v-r {
+            width: 60px;
+            height: 100px;
+            background: white;
+            transform: skew(145deg) scaleY(-1);
+            position: absolute;
+            top: 450px;
+            right: 235px;
+        }
+
+        @keyframes roll {
+            0%{
+                left: 0px;
+            }
+            100%{
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bear">
+        <div class="ear-l"></div>
+        <div class="ear-r"></div>
+        <div class="eye-l"></div>
+        <div class="eye-r"></div>
+        <div class="mouth"></div>
+        <div class="v-l"></div>
+        <div class="v-r"></div>
+    </div>
+</body>
+
+</html>

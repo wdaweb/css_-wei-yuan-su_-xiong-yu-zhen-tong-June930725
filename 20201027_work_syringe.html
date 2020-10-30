@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: '微軟正黑體';
+            box-sizing: border-box;
+        }
+
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* 針筒外部測試定位 */
+        .outside {
+            width: 600px;
+            height: 100px;
+            /* 測試定位 */
+            /* background: silver; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        /* 針筒屁股 */
+        .outside::before {
+            content: '';
+            width: 50px;
+            height: 100px;
+            background: linear-gradient(to bottom, white 10%, rgb(220, 220, 220) 40%, rgb(200, 200, 200) 70%, white 100%);
+            border: 1px solid rgb(200, 200, 200);
+            border-radius: 8px;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 針筒針頭 */
+        .outside::after {
+            content: '';
+            width: 100px;
+            height: 1px;
+            background: black;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+        }
+
+        /* 針筒中間測試定位 */
+        .middle {
+            width: 450px;
+            height: 100px;
+            /* 測試定位 */
+            /* background: silver; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 50px;
+            margin: auto;
+        }
+
+        /* 針筒左側方塊 */
+        .middle::before {
+            content: '';
+            width: 50px;
+            height: 70px;
+            background: linear-gradient(to bottom, white 5%, rgb(220, 220, 220) 40%, rgb(200, 200, 200) 70%, white 100%);
+            border-top: 1px solid rgb(200, 200, 200);
+            border-bottom: 1px solid rgb(200, 200, 200);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            z-index: -1;
+        }
+
+        /* 針筒右側方塊 */
+        .middle::after {
+            content: '';
+            width: 50px;
+            height: 70px;
+            background: linear-gradient(to bottom, white 5%, rgb(220, 220, 220) 40%, rgb(200, 200, 200) 70%, white 100%);
+            border-top: 1px solid rgb(200, 200, 200);
+            border-right: 1px solid rgb(200, 200, 200);
+            border-bottom: 1px solid rgb(200, 200, 200);
+            border-radius: 0 8px 8px 0;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            z-index: -1;
+        }
+
+        /* 針筒針管測試定位 */
+        .inside {
+            width: 50px;
+            height: 100px;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        /* 針筒左側針管測試定位 */
+        .inside::before {
+            content: '';
+            color: grey;
+            font-size: 10px;
+            width: 150px;
+            height: 100px;
+            background: linear-gradient(to bottom, white 0%, rgb(220, 220, 220) 40%, rgb(200, 200, 200) 70%, white 100%);
+            border-top: 1px solid rgb(200, 200, 200);
+            border-bottom: 1px solid rgb(200, 200, 200);
+            border-left: 1px solid rgb(200, 200, 200);
+            position: absolute;
+            top: 0;
+            right: 50px;
+        }
+
+        /* 針筒右側針管測試定位 */
+        .inside::after {
+            content: '';
+            width: 150px;
+            height: 100px;
+            background: linear-gradient(to bottom, rgb(255, 255, 225) 0%, rgb(230, 230, 150) 40%, rgb(210, 210, 120) 70%, rgb(255, 255, 225) 100%);
+            border-top: 1px solid rgb(200, 200, 200);
+            border-right: 1px solid rgb(200, 200, 200);
+            border-bottom: 1px solid rgb(200, 200, 200);
+            position: absolute;
+            top: 0;
+            left: 50px;
+        }
+
+        /* 針筒右側文字定位 */
+        .middle p {
+            color: grey;
+            display: inline;
+            position: absolute;
+            top: 75px;
+            left: 60px;
+            z-index: 1;
+        }
+
+        #table1 td~td {
+            border-right: 1px solid rgb(200, 200, 200);
+            height: 10px;
+            width: 10px;
+            position: relative;
+            left: 50px;
+            z-index: 2;
+        }
+
+        #table2 td~td {
+            border-right: 1px solid rgb(200, 200, 200);
+            height: 10px;
+            width: 10px;
+            position: relative;
+            top: -10px;
+            right: -250px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outside">
+        <div class="middle">
+            <p>made in Taiwan</p>
+            <table cellspacing='0' cellpadding='0' id="table1">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <table cellspacing='0' cellpadding='0' id="table2">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="inside">
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
